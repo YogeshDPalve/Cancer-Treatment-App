@@ -2,7 +2,7 @@ import React from "react";
 import { Route, Routes, useNavigate } from "react-router-dom";
 import Sidebar from "./components/Sidebar";
 import Navbar from "./components/Navbar";
-import { Home } from "./pages";
+import { Home, Onboarding } from "./pages";
 const App = () => {
   return (
     <div className="relative flex min-h-screen flex-row bg-[#13131a] p-4">
@@ -16,6 +16,7 @@ const App = () => {
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/onboarding" element={<Onboarding />} />
         </Routes>
       </div>
     </div>

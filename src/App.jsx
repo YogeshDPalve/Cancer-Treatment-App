@@ -1,14 +1,14 @@
 import React, { useEffect } from "react";
-import { redirect, Route, Routes, useNavigate } from "react-router-dom";
+import { Route, Routes, useNavigate } from "react-router-dom";
 import Sidebar from "./components/Sidebar";
 import Navbar from "./components/Navbar";
 import { Home, Onboarding, Profile } from "./pages";
 import { useStateContext } from "./context";
 import { usePrivy } from "@privy-io/react-auth";
-import MedicalRecord from './pages/records/Index'
+import MedicalRecords from "./pages/records/index";
+
 const App = () => {
-  const { currentUser } = useStateContext();
-  const { user, authenticated, ready, login } = usePrivy();
+  const { currentUser, user, authenticated, ready, login } = useStateContext();
   const navigate = useNavigate();
   useEffect(() => {
     if (ready && !authenticated) {
@@ -30,9 +30,9 @@ const App = () => {
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/onboarding" element={<Onboarding />} />
           <Route path="/profile" element={<Profile />} />
-          <Route path="/medical-records" element={<MedicalRecord />} />
+          <Route path="/onboarding" element={<Onboarding />} />
+          <Route path="/medical-records" element={<MedicalRecords />} />
         </Routes>
       </div>
     </div>

@@ -29,7 +29,7 @@ const Onboarding = () => {
     if (newUser) {
       navigate("/profile");
     }
-  };
+  };  
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-[#13131a]">

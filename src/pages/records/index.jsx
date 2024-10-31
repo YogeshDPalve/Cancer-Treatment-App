@@ -1,5 +1,6 @@
 import { IconCirclePlus } from "@tabler/icons-react";
 import React, { useState, useEffect } from "react";
+import RecordCard from "./components/record-card";
 
 const Index = () => {
   return (
@@ -14,8 +15,11 @@ const Index = () => {
         Create Record
       </button>
 
+      
       <div className="grid  w-full sm:grid-cols-2 sm:gap-6 lg:grid-cols-4">
-        {/*  */}
+        <RecordCard
+        
+        />
       </div>
     </div>
   );

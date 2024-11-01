@@ -11,7 +11,7 @@ const Index = () => {
         // onClick={handleOpenModal}
         onClick={() => {}}
       >
-        <IconCirclePlus />
+        <IconCirclePlus /> 
         Create Record
       </button>
 

@@ -5,6 +5,10 @@ const CreateRecordModal = ({ isOpen, onClose, onCreate }) => {
   const [foldername, setFoldername] = useState("");
 
   const handleCreate = () => {
+    if (!foldername.trim()) {
+      alert("Folder name is required");
+      return;
+    }
     onCreate(foldername);
     setFoldername("");
   };
@@ -30,9 +34,9 @@ const CreateRecordModal = ({ isOpen, onClose, onCreate }) => {
               value={foldername}
               onChange={(e) => {
                 setFoldername(e.target.value);
-                          }}
-                          required
-                          
+              }}
+              required
+              className="block w-full rounded-lg border-2 px-4 py-3 text-sm focus:border-2 focus:outline-none disabled:pointer-events-none disabled:opacity-50 dark:border-neutral-800 dark:bg-neutral-900 dark:text-neutral-400 dark:placeholder-neutral-500"
             />
           </div>
         </div>
@@ -40,3 +44,4 @@ const CreateRecordModal = ({ isOpen, onClose, onCreate }) => {
     </Modal>
   );
 };
+export default CreateRecordModal;
